@@ -1,0 +1,16 @@
+<!-- Indices written at Fri, 22 Jan 2016 15:27:21 JST -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="RecipeHead" ancestor="true" source="auto">
+        <property name="updateDate" direction="desc"/>
+    </datastore-index>
+
+    <!-- Used 6 times in query history -->
+    <datastore-index kind="RecipeHead" ancestor="true" source="auto">
+        <property name="category" direction="asc"/>
+        <property name="updateDate" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

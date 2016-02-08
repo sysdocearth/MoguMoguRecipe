@@ -1,0 +1,536 @@
+@charset "utf-8";
+/* ==========================================================
+変更箇所
+========================================================== */
+
+/* ==========================================================
+layout
+========================================================== */
+#wrapper {text-align: center;}
+#header {margin-right: auto;margin-left: auto;text-align:left;}
+#footer {border-top: solid 1px #ccc;}
+
+#header-logo {float:left;}
+#h-inner {padding-bottom:0px; margin-bottom:10px;border-bottom: solid 1px #ccc;height:80px;}
+
+.container1 {
+	margin-right: auto;margin-left: auto;text-align:left;width: 900px;/*border: solid 1px #ccc;*/overflow: hidden;
+}
+.container2 {
+	margin-right: auto;margin-left: auto;text-align:left;width: 900px;
+}
+
+.box {
+	width: 425px;/*内容領域の幅。下の左右のpaddingを合わせてボックスが200pxになります。*/
+	padding: 10px;/*上下左右に10pxの内余白*/
+	float: left;/*横並びにしています*/
+	margin-right: 0px;/*各ボックスの右側に0pxの外余白*/
+}
+
+.box2 {
+	padding: 10px;/*上下左右に10pxの内余白*/
+	float: left;/*横並びにしています*/
+	margin-top: 30px;
+	position: absolute;
+	margin-right: auto;margin-left: auto;text-align:left;width: 900px;}
+
+p.logout {text-align: right; }
+
+hr.style-one {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+/* -------------------------
+header menu 
+---------------------------*/
+#menu ul{ 
+margin: 0; 
+padding :0; 
+list-style: none;
+}
+
+#menu li{ 
+padding-top: 5px;
+padding-left: 5px;
+margin: 0px;
+float: right; 
+/**/
+}
+#menu li a{
+padding: 0px 0px 0px 25px;
+width: 100px;
+margin: 0px 0px;
+
+font-size:13px;
+font-weight:bold;
+display:block;
+}
+
+
+li.updateList a{
+background: url(/img/newlist.png) no-repeat left center;
+background-size:contain;
+}
+li.postRecipe a{
+background: url(/img/create.png) no-repeat left center;
+background-size:contain;
+}
+li.classicRecipe a{
+background: url(/img/star.png) no-repeat left center;
+background-size:contain;
+}
+
+#menu li.updateList a:hover{
+background: url(/img/newlist-on.png) no-repeat left center;
+background-size:contain;
+}
+#menu li.postRecipe a:hover{
+background: url(/img/create-on.png) no-repeat left center;
+background-size:contain;
+}
+#menu li.classicRecipe a:hover{
+background: url(/img/star-on.png) no-repeat left center;
+background-size:contain;
+}
+
+h1 {float:left; width:210px;/*width:250px;*/} /*　Y.Takeuchi add a space between the #header-logo and #gm */
+
+#gm {/*font-size:14px;*/font: bold 14px arial;float:left; padding-top:25px;width:550px;}
+#gm ul {margin:0 auto;/*text-align:left;*//*padding-top:25px;padding-bottom:0px;*/}
+
+#gm ul, #gm ul li {list-style-type: none;}
+#gm ul li a { display:block;padding-right: 35px;padding-left: 30px;}
+#gm ul li a.last { display:block;padding-left: 30px;}
+#gm ul li.mypage {
+	float:left;
+	background: url(/img/h-menu0001.png);
+	background-size:22px 22px;
+	background-repeat: no-repeat;
+	background-position: left center;/*テキストの位置を画像の中央*/
+	padding-left:0px;/*テキストを左に動かす*/
+	height: 22px;/*画像の大きさとテキストの大きさを合わせる*/
+	/*background-position: left;*/
+}
+#gm ul li.myprofile {
+	float:left;
+	background: url(/img/h-menu0011.png);
+	background-size:22px 22px;
+	background-repeat: no-repeat;
+	background-position: left center;/*テキストの位置を画像の中央*/
+	padding-left:0px;/*テキストを左に動かす*/
+	height: 22px;/*画像の大きさとテキストの大きさを合わせる*/
+	/*background-position: left;*/
+}
+#gm ul li.mymenu {
+	float:left;
+	background: url(/img/h-menu0002.png);
+	background-size:22px 22px;
+	background-repeat: no-repeat;
+	background-position: left center;/*テキストの位置を画像の中央*/
+	padding-left:0px;/*テキストを左に動かす*/
+	height: 22px;/*画像の大きさとテキストの大きさを合わせる*/
+	/*background-position: left;*/
+}
+#gm ul li.systemmenu {
+	float:left;
+	background: url(/img/h-menu0003.png);
+	background-size:22px 22px;
+	background-repeat: no-repeat;
+	background-position: left center;/*テキストの位置を画像の中央*/
+	padding-left:0px;/*テキストを左に動かす*/
+	height: 22px;/*画像の大きさとテキストの大きさを合わせる*/
+	/*background-position: left;*/
+}
+#header-logo2 {width: 740px;float:left;text-align:left;}
+ul.toBack { text-align:left;}
+
+#gm-next ul{margin: 0;padding: 0;list-style: none;width:750px;}
+#gm-nextback li{ display: inline;padding: 0;margin: 0; float: left;width:750px;}
+
+#gm-nextback ul{margin: 0;padding: 0;list-style: none;width:750px;}
+#gm-nextback li{ display: inline;padding: 0;margin: 0; float: left;width:375px;}
+li.toBackMenu { text-align:left;}
+li.toNextMenu { text-align:right;}
+
+.copy {width: 1000px;margin:5px auto;text-align:left; padding-top:5px; color:#999;}
+#contents {padding:15px 0;}
+#contents-inner {width: 900px;margin-right: auto;margin-left: auto;text-align:left;}
+
+#contents ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+/* module */
+.ml{
+	background-repeat: no-repeat;
+	background-position: left center;
+	margin:0;
+	text-align:left;
+	padding-left:0px; /*2014-03-04 add Y.Takeuchi*/
+	font-size:16px
+	line-height:30px;
+}
+
+h3.mml {
+	background-image: url(/img/pi/mll.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	font-size:14px;
+}
+
+
+
+/* logout*/
+#logout li {
+	list-style-type: none;
+}
+#logout li {
+  position: relative;
+  float: right;
+  margin: 0;
+  padding: 0;
+  height:20px;
+}
+
+#logout li { cursor:pointer;}
+
+#logout li:hover {
+  background: #eee;
+}
+#logout li ul {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  padding: 3px;
+  width: 150px;
+  background: #fff;
+  border: solid 1px #ccc;
+  font-size:12px;
+}
+#logout li ul li {
+  margin: 0;
+  padding:3px 0px;
+  width: 150px;
+  border: none;
+  text-align:center;
+}
+#logout li ul li a {
+  display: inline-block;
+  width: 150px;
+}
+#logout li ul li a:hover {
+  background: #999;
+  color: #fff;
+}
+
+/* icon/bottum */
+.icon-plus { text-align:right; margin-bottom:5px;}
+.btm-s {text-align:center ; margin:5px auto;}
+
+/*==========================================================
+pankuz
+========================================================== */
+#pankuz {width: 900px;margin-right: auto;margin-left: auto;text-align:left;/*border: solid 1px #ccc;*/padding-top:5px;padding-bottom:25px}
+ul.pankuz-navi {list-style-type: none; font-size:12px;}
+ul.pankuz-navi li {background-image: url(/img/pi/bg_breadcrumb.gif);background-repeat: no-repeat;background-position: right center;padding-right: 18px;padding-left: 5px;list-style-type: none;display: inline;}
+ul.pankuz-navi li.last {background-image: none !important;}
+
+#pankuz-sp {margin-right: auto;margin-left: auto;text-align:left; padding:5px 0;}
+
+
+/* ==========================================================
+form-table
+========================================================== */
+.form-txt {font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;border: 1px solid #CCC; padding:5px;}
+.form-password {font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;border: 1px solid #CCC; padding:2px;}
+.form-txt-in {border: 1px solid #CCC;background-color: #FFC;padding:3px;}
+.form-select {padding: 3px;font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;border: 1px solid #CCC;}
+.form-file {padding: 3px;font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;border: 1px solid #CCC;}
+.form-textarea {padding: 3px;font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;resize: none;border: 1px solid #CCC;}
+.form-textarea-h {padding: 3px;font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;resize: none;height: 150px;border: 1px solid #CCC;}
+.form-radio {padding: 3px;font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;border: 1px solid #CCC;}
+.form-label {padding: 4px 5px;}
+
+.ta-form {}
+.ta-form table {padding:3px; border-collapse:collapse;border:solid 1px #CCC;margin:0 auto;}
+.ta-form table th, .ta-form table td {border:solid 1px #CCC;}
+/* col table */
+.ta-form table.typeA {}
+.ta-form table.typeA th {padding:6px;background-color: #eeeeee;}
+.ta-form table.typeA td {padding:6px;text-align:left;}
+/* row table */
+.ta-form table.typeB {}
+.ta-form table.typeB th {padding:6px;background-color: #eeeeee;}
+.ta-form table.typeB td {padding:6px;text-align:left;border:none;}
+.ta-form table.typeB tr.upper {border-top:solid 1px #CCC;}
+/* row table */
+.ta-form table.typeC {}
+.ta-form table.typeC th {padding:6px;vertical-align: top;border:none;}
+.ta-form table.typeC td {padding:12px;text-align:left;vertical-align: top;border:none;}
+.ta-form table.typeC td.line-desc {padding:8px 12px 12px 12px;text-align:left;vertical-align: top;border:none;}
+.ta-form table.typeC tr.upper {}
+/* */
+.ta-form table.typeD {}
+.ta-form table.typeD {}
+.ta-form table.typeD th {padding:12px 12px 0px 12px;vertical-align: top;border:none;}
+.ta-form table.typeD td {padding:10px 10px 10px 0px;text-align:left;border-top:none;border-bottom: none;border-left: none;}
+
+
+.ta-objform {}
+.ta-objform table {}
+.ta-objform table.typeA {border-collapse:collapse;margin:0 auto;}
+.ta-objform table.typeB {border-collapse:collapse;margin:0 auto;}
+.ta-objform table.typeC {border-collapse:collapse;margin:0 auto;}
+.ta-objform table.typeD {border-collapse:collapse;margin:0 auto;}
+.ta-objform table th, .ta-objform table td {border:none;}
+
+/* ==========================================================
+infomation
+========================================================== */
+.info-con {text-align:center;margin:0 auto;}
+.info-con-left {text-align:left;margin:0 auto;}
+
+/* ==========================================================
+categoly-page
+========================================================== */
+
+h3.page-con {text-align:left;color:#666666;font-size:16px;margin-bottom:20px;padding-left:16px}
+img.page-title{vertical-align: middle;padding-right:10px;width:30; height:30 }
+
+span.recipetitle{font-size:17px;font-weight:bold;}
+p.grey {color:#666666}
+span.line {color:#666666}
+span.line-thin {color:#999999}
+img.page-category {margin-top: 8px;}
+img.page-posted {margin-left: 30px;}
+
+
+/* ==========================================================
+detail-page
+========================================================== */
+p.recipetitle-detail{font-size:17px;font-weight:bold;padding-bottom :10px}
+p.coltitle{border:solid 1px #CCC;border-color:#ffc477;color:#e18a19;padding:3px;margin:3px}
+img.page-detail {vertical-align:middle;}
+.funcMenuBlock div.funcListFrame{
+	float: right;
+}
+
+/* ==========================================================
+company-list
+========================================================== */
+
+#conAlpha {width:190px; float:left;} /*space right 10*/
+#conBeta { width:750px; float:right;} /*space left 10*/
+
+/* conAlpha + conBeta = max 950 */
+
+.com01 { width:190px;}
+.com01 h3 {float:left;height:30px;line-height:30px;}
+.com02 {float:right;}
+
+.com03 {}
+.com03 ul li{ padding-top:3px; padding-bottom:3px; margin-bottom:3px;}
+.com03 ul li a { display:block;}
+
+.comList1 {background-image: url(/img/pi/txtLink.png);	background-repeat: no-repeat;	background-position: 2px 5px;	padding-left: 15px;	background-color:#eeeeee;}
+.comList2 {background-image: url(/img/pi/icon-org2.png);	background-repeat: no-repeat;	background-position: left 5px;	padding-left: 10px;margin-left:20px;}
+
+.com04 {}
+.com04 h3 {float:left;height:30px;line-height:30px;}
+.com05 {float:right;}
+
+/* ==========================================================
+employee-list Add Y.Takeuchi
+========================================================== */
+
+#empAlpha {width:200px; float:left;} /*space right 10*/
+#empBeta { width:700px; float:right;} /*space left 10*/
+
+/* conAlpha + conBeta = max 900 */
+
+.emp01 { width:170px;}
+.emp01 h3 {float:left;height:30px;line-height:30px;}
+.emp02 {float:right;}
+
+.emp03 {}
+.emp03 ul li{ padding-top:3px; padding-bottom:3px; margin-bottom:3px;}
+.emp03 ul li a { display:block;}
+
+
+/* ドロップダウンメニュー */
+#comList li, #comList2 li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width:60px;
+}
+
+#comList li, #comList2 li { cursor:pointer;}
+
+#comList li:hover, #comList2 li:hover {
+  background: #ccc;
+}
+#comList li ul, #comList2 li ul {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: -1px;
+  padding: 5px;
+  width: 150px;
+  background: #eee;
+  border: solid 1px #ccc;
+  font-size:12px;
+  margin: -1px 0;   /* change to margin:0px;*/
+}
+#comList li ul li, #comList2 li ul li {
+  margin: 0;
+  padding:5px 0px;
+  width: 150px;
+  border: none;
+}
+#comList li ul li a, #comList2 li ul li a {
+  display: inline-block;
+  width: 150px;
+}
+#comList li ul li a:hover, #comList2 li ul li a:hover {
+  background: #999;
+  color: #fff;
+}
+
+
+/* ==========================================================
+compensation
+========================================================== */
+.mlcompeL { float:left; width:500px;}
+.mlcompeL9 { float:left; width:900px;}
+.mlcompeR { float:right; width:180px;}
+
+.compe01 { margin-top:20px; margin-left:0px;margin-bottom:10px;}
+ul.compe02 {}
+ul.compe02 li {
+	float:left;
+	border: 1px solid #CCC;
+	width:310px;
+	height:100px;
+	color:#CCC;
+}
+
+
+ul.compe02 li.nosen { border-left:none;}
+.compeCheck img {float:left;}
+
+.count{
+color : #808000;
+clear:left;
+float:left;
+position: relative;
+left:10%;
+}
+
+
+div.compeCheck p a.link {display:block; color:#333;width:270px;height:125px; background-color: #F9F9F9;}
+div.compeCheck p a.nolink {display:block; color:#CCC;width:270px;height:125px;}
+
+
+div.compeCheck p a.link:hover {background-color: #eeeeee;text-decoration: none;}
+
+div.compeCheck span.m01 {
+	font-size: 15px;
+	font-weight:bold;
+	position: absolute;
+	top: 17px;
+	padding-left:10px;	
+}
+
+div.compeCheck span.m02 {
+	position: absolute;
+	top: 55px;
+	padding-left:10px;
+}
+
+/***********************************
+ for Ajax -- compeCheckdummy 
+************************************/
+div.compeCheckdummy img {float:left;}
+
+div.compeCheckdummy span.count{
+color : #808000;
+clear:left;
+float:left;
+position: relative;
+left:10%;
+}
+
+div.compeCheckdummy p a {display:block; color:#333;width:270px;height:125px; background-color: #F9F9F9;}
+
+div.compeCheckdummy p a:hover {background-color: #eeeeee;text-decoration: none;}
+
+
+div.compeCheckdummy span.m01 {
+	font-size: 14px;
+	font-weight:bold;
+	position: absolute;
+	top: 8px;
+}
+
+div.compeCheckdummy span.m02 {
+	position: absolute;
+	top: 35px;
+}
+/**********************************/
+
+.nocheck { padding:10px 10px 10px 10px;}
+
+#compeList {position: relative;}
+
+.compe-no {
+	text-align: center;
+	/*width: 930px;*/
+	width: 830px;
+	z-index: 1;
+	top: 30px;
+	position:absolute;
+	font-size:20px;
+	font-weight:bold;
+}
+
+ul.compe02 li {
+	float:left;
+	border: 1px solid #CCC;
+	width:270px;
+	height:125px;
+	color:#CCC;
+	margin-right:40px;
+	margin-bottom:20px;
+}
+
+/*::::::::::::::::::::::::::::::::*/
+
+ul.compe02 li.last {
+	margin-right:0px;
+}
+
+ul.compe02 li.pre {
+	color:#ccc;
+}
+
+
+
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+.mlcompeR ul {}
+
+.mlcompeR ul {
+	position: relative;
+	height: 60px;
+	width: 180px;
+}

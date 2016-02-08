@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/*==========================================================
+all-clesr
+========================================================== */
+body,div,
+dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,form,fieldset,p,blockquote,th,td {
+   margin:0;
+   padding:0;
+}
+
+/* ----   
+==========================================================
+com
+========================================================== */
+body {font-family: Verdana,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'MS Pゴシック', sans-serif;}
+body {color: #333;letter-spacing: 0;margin: 0px;padding: 0px;text-align: center;background-color: #fff;}
+a:link {
+	text-decoration: none;
+	color: #17A0AC;
+}
+a:visited {text-decoration: underline;color: #17A0AC;}
+a:hover {text-decoration: underline;color:#D1AD1D;}
+a img {border:none}
+a:visited img {border:none}
+a {outline:none}
+
+.ahere {color:#D1AD1D;}
+.font-a {color: #17A0AC;}
+
+
+.txtLink a, .txtLink a:visited {color: #666;}
+.txtLink a:hover {color:#17A0AC;}
+.image-co {vertical-align: middle}
+
+
+/*▼*画像マウスオーバー*▼*/
+div.ihover a:hover img,
+a:hover img.ihover {
+	opacity:0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70 )";
+	background: #fff;
+}
+
+/* ----   
+==========================================================
+ボタン等
+========================================================== */
+.mbtm5 {margin-bottom:5px}
+.mbtm7 {margin-bottom:7px}
+
+.delet {line-height: 15px;	background-image: url(/img/pi/icon-delete-2.gif);
+background-repeat: no-repeat;
+background-position: left center;padding-left: 18px;}
+
+.triang {
+	line-height: 15px;
+	background-image: url(/img/pi/icon-bottom.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+
+/* ----   
+==========================================================
+空白等
+========================================================== */
+
+.clearfix {min-height: 0px;}
+/** html .clearfix{height: 1px;}*/
+.clearfix:after {
+	height: 0;
+	visibility:hidden;
+	content:".";
+	display:block;
+	clear: both;
+}
+/* for MacIE5 \*//*/
+.clearfix {height: auto;overflow: hidden;}
+/* end */
+
+.clear2 {margin: 0px;padding: 0px;clear: both;font-size: 1px;line-height: 0px;}
+.clear {margin: 0px;padding: 0px;clear: both;}
+
+.verT {
+	vertical-align: top;
+}

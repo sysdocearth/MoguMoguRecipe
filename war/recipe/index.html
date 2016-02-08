@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+
+<title>料理レシピの整理 - もぐもぐレシピ</title>
+<link type="text/css" href="/css/jquery-ui-1.10.4/themes/base/jquery.ui.theme.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/css/pi/import.css" media="all" />
+<link rel="stylesheet" href="/css/layout-common.css" type="text/css"/>
+
+<!-- Start JavaScript -->
+<script type="text/javascript" src="/js/import.js"></script>
+<script type="text/javascript">
+function deletePanelLink(ptagid) {
+	//delete a tag link
+	var obj_link = document.getElementById(ptagid) ;
+    obj_link.disabled = true ;
+    obj_link.removeAttribute( "href" ) ;
+    //Change class
+    obj_link.className = 'nolink';
+}
+$(document).ready(function() {
+  	$.ajax({
+		dataType: "json"
+		,url: '/recipe/category'
+		, type: 'get'
+  	
+	}).done(function(data){
+		//accountId
+		$('span#accountId').text("こんにちは " + data.accountId + " さん");
+		
+		//logout URL
+		var logout_link = document.getElementById("logouturl") ;
+		logout_link.href = data.logoutURL;
+		
+		//Site Concept (改行対応)
+		var obj = $('li#siteConcept').text(data.siteConcept);
+		obj.html(obj.html().replace(/\n/g,'<br/>'));
+		
+		//// レシピ件数 ////
+	    $('span#allCount')		.text("全 " + data.allCount +" 件");
+	    $('span#meatCount')		.text(data.meatCount +" 件");
+	    $('span#fishCount')		.text(data.fishCount +" 件");
+	    $('span#eggTofuCount')	.text(data.eggTofuCount +" 件");
+	    $('span#mainSoupCount')	.text(data.mainSoupCount +" 件");
+	    $('span#sideDishCount')	.text(data.sideDishCount +" 件");
+	    $('span#dessertCount')	.text(data.dessertCount +" 件");
+	    	    
+	    //// 0件の場合ｊは、リンクを削除する ////
+	    //Meat
+	    if(data.meatCount==0){
+	    	deletePanelLink('meat-link');
+	    }	    
+	    //fish
+	    if(data.fishCount==0){
+	    	deletePanelLink('fish-link');
+	    }
+	  	//eggTofu
+	    if(data.eggTofuCount==0){
+	    	deletePanelLink('eggtofu-link');
+	    }
+	  	//mainSoup
+	  	if(data.mainSoupCount==0){
+	  		deletePanelLink('mainsoup-link');
+	  	}
+	  	//sideDish
+	  	if(data.sideDishCount==0){
+	  		deletePanelLink('sidedish-link');
+	  	}
+	  	//sideDish
+	  	if(data.dessertCount==0){
+	  		deletePanelLink('dessert-link');
+	  	}	    
+	})
+	.fail(function(data){
+		//alert('error!!!');
+		location.href = "/recipe/index";
+	});
+  });
+</script>
+<!-- End JavaScript// -->
+</head>
+
+<body>
+<form name="recipesearch" method="post" action="/recipe/detail" style="display: inline">
+  <input type="hidden" name="key" value=""/>
+</form>
+<div id="wrapper">
+<!-- ■header■ -->
+<div id="h-inner">
+  <div class="container1">
+    <div class="box">
+      <div id="header-logo" class="clearfix">
+      <h1><img src="/img/logo_dummy.png" alt="mogumogu" /></h1>
+      </div>  
+    </div>
+    <div class="box">
+      <p class="logout"><span id="accountId" class="account mrR20"><img src="/img/ajax-loader.gif" /></span><a id="logouturl" href="">ログアウト</a></p>
+    </div>
+    <div class="recipeallsearch">
+    <form method="get" id="psearch" method="get" action="/recipe/search">
+    <input type="text" id="recipeautocomplete" name="title" class="autocomplete" placeholder="レシピを検索する" />
+    </form>
+    </div>
+  </div>
+ 
+</div>
+
+<div class="container2">
+  <div id="menu">
+  <ul>
+  <li class="postRecipe"><a href="/recipe/create" >レシピを書く</a></li>
+  <li class="updateList"><a href="/recipe/newList" >新着レシピ</a></li>
+  <li class="classicRecipe"><a href="/recipe/classic" >定番レシピ</a></li>
+  </ul> 
+  </div>
+</div>
+<!-- // header  -->
+
+<!-- ■pankuz■ -->
+<div id="pankuz">
+  <ul class="pankuz-navi">
+  <li id="siteConcept" class="last ahere"><img src="/img/ajax-loader.gif" /></li>
+  </ul>
+</div>
+<!-- // pankuz  -->
+
+<!-- ■■contents■■ -->
+<div id="contents">
+<div id="contents-inner">
+
+<h3 id="title">レシピカテゴリ<span id="allCount" class="line mrR10" style="float:right"><img class="mrR30" src="/img/ajax-loader.gif" /></span></h3>
+<div class="clearfix">
+
+<!-- 1 -->
+<div id="compeList" class="mrB20">
+<div class="compe01">
+
+<ul id="one-stage" class="compe02 clearfix">
+
+<li>
+<div class="compeCheck" >
+<p id="meat-panel">
+<a class="link" id="meat-link" href="/recipe/list?kind=MEAT"><img id="imgMeat" src="/img/meat.png" width="48" height="48" class="pd17"/><span id="meatCount" class="count"></span><span class="m01 mrT5">主菜（お肉）</span><br />
+<span class="m02 mrT10">お肉がメインのおかず<br />炒め物・ハンバーグ など</span></a>
+</p>
+</div>
+</li>
+
+<li class="pre">
+<div class="compeCheck">
+<p id="fish-panel">
+<a id="fish-link" class="link" href="/recipe/list?kind=FISH"><img id="imgFish" src="/img/fish.png" width="48" height="48" class="pd17"/><span id="fishCount" class="count"></span><span class="m01 mrT5">主菜（お魚）</span><br />
+<span class="m02 mrT10">お魚がメインのおかず<br />煮魚・フライ  など</span></a></p>
+</div>
+</li>
+
+<li class="last">
+<div class="compeCheck">
+<p id="eggtofu-panel">
+<a id="eggtofu-link" class="link" href="/recipe/list?kind=EGGSTOFU"><img id="imgEggTofu" src="/img/egg.png" width="48" height="48" class="pd17"/><span id="eggTofuCount" class="count"></span><span class="m01 mrT5">主菜（卵・豆腐）</span><br />
+<span class="m02 mrT10">卵や豆腐がメインのおかず<br />茶碗蒸し・オムレツなど</span></a></p>
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+<!-- //1 -->
+
+<!-- 2 -->
+<div id="compeList">
+<div class="compe01">
+
+<ul class="compe02 clearfix">
+<li>
+<div class="compeCheck" >
+<p id="mainsoup-panel">
+<a id="mainsoup-link" class="link" href="/recipe/list?kind=MAINFSOUP"><img id="imgMainSoup" src="/img/soop.png" width="48" height="48" class="pd17"/><span id="mainSoupCount" class="count"></span><span class="m01 mrT5">主食・汁もの</span><br />
+<span class="m02 mrT10">お米・パスタ・グラタン<br />シチュー・スープ など</span></a></p>
+</div>
+</li>
+
+<li class="pre">
+<div class="compeCheck">
+<p id="sidedish-panel">
+<a id="sidedish-link" class="link" href="/recipe/list?kind=SIDEDISH"><img id="imgSideDish" src="/img/carrots.png"width="48" height="48" class="pd17"/><span id="sideDishCount" class="count"></span><span class="m01 mrT5">副菜（野菜・きのこ）</span><br />
+<span class="m02 mrT10">野菜やきのこのおかず<br />サラダ・あえもの など</span></a></p>
+</div>
+</li>
+
+<li class="last">
+<div class="compeCheck">
+<p id="dessert-panel">
+<a id="dessert-link" class="link" href="/recipe/list?kind=DESSERT"><img id="imgDessert" src="/img/cake.png" width="48" height="48" class="pd17"/><span id="dessertCount" class="count" ></span><span class="m01 mrT5">愛情の一品</span><br />
+<span class="m02 mrT10">デザート・お菓子のおやつ<br />パンケーキ・きなこ など</span></a></p>
+</div>
+</li>
+
+
+</ul>
+</div>
+</div>
+<!-- //2　-->
+
+</div>
+<!-- //clearfix -->
+</div>
+<!--　//contents-inner　-->
+</div>
+<!-- //■■contents■■ -->
+<!-- ■■footer■■ -->
+<div id="footer">
+<div class="copy text-center">
+<p>&copy;&nbsp;2015&nbsp;
+<!-- <script type="text/javascript">copyrightYear();</script> -->
+ Yoko Takeuchi. All Rights Reserved.&nbsp;&nbsp;<img style="vertical-align: middle;" src="https://developers.google.com/appengine/images/appengine-noborder-120x30.gif" alt="Powered by Google App Engine"/></p>
+</div>
+</div>
+<!-- //■■footer■■ -->
+</div>
+</body>
+</html>
