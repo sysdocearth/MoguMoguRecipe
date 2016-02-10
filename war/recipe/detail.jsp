@@ -139,7 +139,7 @@ $(function() {
 </div>
 </div>
 
-<div style="border:solid 1px #CCC;border-width: 1px;padding:16px; margin:0 auto;" class="w820 mrB30">
+<div style="border:solid 1px #CCC;border-width:1px;padding:16px; margin:0 auto;" class="w820 mrB30">
 
 <p class="recipetitle-detail">${recipeHead.title}</p>
 <c:if test="${recipeHead.noRatings=='y'}">
@@ -192,9 +192,13 @@ $(function() {
       <td>${f:br(recipeBody.familyComment)}</td>
     </tr>
   </table>
-  
+  <div>
+  <br>
+  <span class="line mrB10" style="float:right;">公開日：<fmt:formatDate value="${recipeHead.createDate}" pattern="yyyy-MM-dd" />
+  &nbsp;&nbsp;更新日：<fmt:formatDate value="${recipeHead.updateDate}" pattern="yyyy-MM-dd" />
+  </span>
+  </div>
 </div>
-    <!-- ********************************************************************* -->
 </div>
   
 <div>

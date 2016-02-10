@@ -161,7 +161,7 @@ public class RecipeService {
             //データストアから該当のカテゴリレシピを取得
             retRecipeListBycategory =  Datastore.query(o, ancestorKey)
                 .filter(o.category.equal(category))
-                .sort(o.updateDate.desc)
+                .sort(o.createDate.desc)
                 .asList();
             
         }catch(Exception e){
@@ -193,7 +193,7 @@ public class RecipeService {
             //データストアから定番レシピ情報を取得
             retClassicRecipeList =  Datastore.query(o, ancestorKey)
                 .filter(o.classicRecipe.equal("y"))
-                .sort(o.updateDate.desc)
+                .sort(o.createDate.desc)
                 .asList();
             
         }catch(Exception e){

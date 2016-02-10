@@ -99,7 +99,7 @@ $(function() {
         </td>        
         <td rowspan=2 class="w100"><span class="line">${f:h(category.minute)}&nbsp;分<br>${f:h(category.servings)}&nbsp;人前</span></td>
         <td rowspan=2 class="w150">
-        <span class="line-thin"><fmt:formatDate value="${category.updateDate}" pattern="yyyy-MM-dd" />&nbsp;up</span>
+        <span class="line-thin">公開日&nbsp;<fmt:formatDate value="${category.createDate}" pattern="yyyy-MM-dd" /></span>
         
 <c:if test="${category.noRatings=='y'}">
 <div style="position: relative;">

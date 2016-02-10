@@ -78,8 +78,7 @@
         </td>        
         <td rowspan=2 class="w100"><span class="line">${f:h(classicRecipe.minute)}&nbsp;分<br>${f:h(classicRecipe.servings)}&nbsp;人前</span></td>
         <td rowspan=2 class="w150">
-        <span class="line-thin">
-        <fmt:formatDate value="${classicRecipe.updateDate}" pattern="yyyy-MM-dd HH:mm"/>&nbsp;up</span>
+        <span class="line-thin">公開日&nbsp;<fmt:formatDate value="${classicRecipe.updateDate}" pattern="yyyy-MM-dd"/></span>
         <c:if test="${classicRecipe.mogumoguLevel == 5}">
         <img class="page-classicRecipe" src="/img/heart-5.png" title="もぐもぐレベル 5 - 家族の評価" class="bal"/>
         </c:if>
