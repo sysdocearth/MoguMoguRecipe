@@ -144,6 +144,8 @@ public class RecipeService {
     
     /**
      * カテゴリごとのレシピを取得します。
+     * 公開日（createDate）降順のリストです。
+     * 
      * @param ancestorKey システム情報主キー
      * @return List<RecipeHead>
      */
@@ -174,7 +176,8 @@ public class RecipeService {
     }
     
     /**
-     * 定番レシピを取得します。
+     * 定番レシピを取得します。<br>
+     * 公開日（createDate）降順のリストです。
      * 
      * @param ancestorKey
      * @return すべての定番レシピ
